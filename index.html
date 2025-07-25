@@ -31,6 +31,7 @@
 </head>
 <body>
   <h2>Magnificent28 Reservation Form</h2>
+  <script>var submitted = false;</script>
 
   <form action="YOUR_GOOGLE_SCRIPT_URL" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
     <input name="FullName" placeholder="Full Name" required />
@@ -71,7 +72,6 @@
     <button type="submit">Submit Reservation</button>
   </form>
 
-  <script>var submitted = false;</script>
   <iframe name="hidden_iframe" style="display:none;" onload="if(submitted) alert('Reservation submitted!')"></iframe>
 </body>
 </html>
