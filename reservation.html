@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservation Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+    }
+    button {
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <h2>Magnificent28 Reservation Form</h2>
+  <form id="reservationForm">
+    <input type="text" name="FullName" placeholder="Full Name" required />
+    <select name="Item" required>
+      <option value="">Select Item</option>
+      <option>A1</option>
+      <option>A2</option>
+      <option>A3</option>
+      <option>Tuxedo</option>
+      <option>Flowergirl</option>
+      <option>Bridesmaids infinity</option>
+      <option>Bridesmaids formal dress</option>
+      <option>Formal dress</option>
+      <option>Barong</option>
+      <option>Ball gown Classic</option>
+      <option>Ball Gown mid tier</option>
+      <option>Ball gown high end</option>
+      <option>Filipiniana normal</option>
+      <option>Filipiniana modern</option>
+    </select>
+    <input type="number" name="Downpayment" placeholder="Downpayment" required />
+    <input type="date" name="DateOfUse" placeholder="Date of Use" required />
+    <input type="date" name="DateOfRelease" placeholder="Date of Release" required />
+    <input type="date" name="DateOfFitting" placeholder="Date of Fitting" required />
+    <input type="text" name="Motif" placeholder="Motif" />
+    <input type="text" name="GroomsmenMotif" placeholder="Groomsmen Motif" />
+    <input type="text" name="BridesmaidsMotif" placeholder="Bridesmaids Motif" />
+    <input type="text" name="GroomsmenAttire" placeholder="Groomsmen Attire" />
+    <input type="text" name="BridesmaidsAttire" placeholder="Bridesmaids Attire" />
+    <input type="text" name="BridalGown" placeholder="Bridal Gown" />
+    <input type="text" name="GroomAttire" placeholder="Groom Attire" />
+    <input type="text" name="MotherGroomAttire" placeholder="Mother Groom Attire" />
+    <input type="text" name="MotherBrideAttire" placeholder="Mother Bride Attire" />
+    <input type="text" name="FatherGroomAttire" placeholder="Father Groom Attire" />
+    <input type="text" name="FatherBrideAttire" placeholder="Father Bride Attire" />
+    <input type="text" name="BestmanAttire" placeholder="Bestman Attire" />
+    <input type="text" name="MaidOfHonorAttire" placeholder="Maid of Honor Attire" />
+    <button type="submit">Submit Reservation</button>
+  </form>
+
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbweQO75Se6j9m54l6_LNjLCOhYEAqelhgLB41vYfKOexLjg9F3plwoNfMQSSJsEUeKXUQ/exec";
+
+  document.getElementById('reservationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const data = {};
+    formData.forEach((value, key) => data[key] = value);
+    data.Timestamp = new Date().toISOString();
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: { 'Content-Type': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        alert('Reservation submitted!');
+        this.reset();
+      } else {
+        alert('Submission failed.');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
