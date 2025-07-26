@@ -68,19 +68,11 @@
   </style>
 </head>
 <body>
-
-  <h2>MAGNIFICENT28 ONLINE</h2>
+  <h2>Reservation Form</h2>
 
   <button class="nav-btn" type="button" onclick="window.location.href='https://shebuel-rey.github.io/magnificent28-reservation/sales.html'">
-    OPEN SALES ENTRY
+    ENTER SALE
   </button>
-
-  <button class="nav-btn" type="button" onclick="window.location.href='https://shebuel-rey.github.io/magnificent28-reservation/manage.html'">
-  OPEN RESERVATIONS
-  </button>
-
-
-  <h2>Reservation Form</h2>
 
   <form id="reservationForm">
     <div class="form-group">
@@ -105,20 +97,43 @@
 
     <div class="form-group">
       <label>Motifs</label>
-      <label>Motif</label>
-      <input type="text" name="Motif" placeholder="General Motif">
+      <label>General Motif</label>
+      <select name="Motif">
+        <option>Gray</option><option>Dark Gray</option><option>Rustic Orange</option><option>Old Rose</option><option>Dark Old Rose</option>
+        <option>Sage Green</option><option>Olive Green</option><option>Emerald Green</option><option>Mint Green</option><option>Beige</option>
+        <option>Yellow</option><option>Dusty blue</option><option>Powder Blue</option><option>Royal Blue</option><option>Navy Blue</option>
+        <option>Lavender</option><option>Dark violet</option><option>Maroon</option><option>Peach</option>
+      </select>
       <label>Groomsmen Motif</label>
-      <input type="text" name="GroomsmenMotif" placeholder="Groomsmen Motif">
+      <select name="GroomsmenMotif">
+        <option>Gray</option><option>Dark Gray</option><option>Rustic Orange</option><option>Old Rose</option><option>Dark Old Rose</option>
+        <option>Sage Green</option><option>Olive Green</option><option>Emerald Green</option><option>Mint Green</option><option>Beige</option>
+        <option>Yellow</option><option>Dusty blue</option><option>Powder Blue</option><option>Royal Blue</option><option>Navy Blue</option>
+        <option>Lavender</option><option>Dark violet</option><option>Maroon</option><option>Peach</option>
+      </select>
       <label>Bridesmaids Motif</label>
-      <input type="text" name="BridesmaidsMotif" placeholder="Bridesmaids Motif">
+      <select name="BridesmaidsMotif">
+        <option>Gray</option><option>Dark Gray</option><option>Rustic Orange</option><option>Old Rose</option><option>Dark Old Rose</option>
+        <option>Sage Green</option><option>Olive Green</option><option>Emerald Green</option><option>Mint Green</option><option>Beige</option>
+        <option>Yellow</option><option>Dusty blue</option><option>Powder Blue</option><option>Royal Blue</option><option>Navy Blue</option>
+        <option>Lavender</option><option>Dark violet</option><option>Maroon</option><option>Peach</option>
+      </select>
     </div>
 
     <div class="form-group">
       <label>Attires</label>
       <label>Groomsmen Attire</label>
-      <input type="text" name="GroomsmenAttire" placeholder="Groomsmen Attire">
-      <label>Bridesmaids Attire </label>
-      <input type="text" name="BridesmaidsAttire" placeholder="Bridesmaids Attire">
+      <select name="GroomsmenAttire">
+        <option>Vest</option>
+        <option>Barong</option>
+        <option>Suspender</option>
+        <option>Tuxedo</option>
+      </select>
+      <label>Bridesmaids Attire</label>
+      <select name="BridesmaidsAttire">
+        <option>Infinity</option>
+        <option>Classic Dress</option>
+      </select>
       <label>Bridal Gown</label>
       <input type="text" name="BridalGown" placeholder="Bridal Gown">
       <label>Groom Attire</label>
@@ -154,6 +169,8 @@
         <div class="item-label">Ball Gown High End <input type="number" name="Item_Ball gown high end" min="0" value="0"></div>
         <div class="item-label">Filipiniana Normal <input type="number" name="Item_Filipiniana normal" min="0" value="0"></div>
         <div class="item-label">Filipiniana Modern <input type="number" name="Item_Filipiniana modern" min="0" value="0"></div>
+        <div class="item-label">Groomsmen Set <input type="number" name="Item_Groomsmen Set" min="0" value="0"></div>
+        <div class="item-label">Bearer Set <input type="number" name="Item_Bearer Set" min="0" value="0"></div>
       </div>
     </div>
 
