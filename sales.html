@@ -39,11 +39,34 @@
     </button>
 
     <!-- Sales Form -->
-    <form action="https://script.google.com/macros/s/AKfycbwON5_F_Mt4HkvW8oBy-lZd9TbKA_SOe5Le6gx404sQ7BQUem7VIDi70jEaWQTWMRZg/exec" method="POST" target="_blank">
+    <form id="salesForm">
       <input type="text" name="Name" placeholder="Customer Name" required>
       <input type="number" name="Payment" placeholder="Amount Paid" required>
       <textarea name="Note" placeholder="Optional note..."></textarea>
       <button type="submit">Submit Sale</button>
     </form>
+
+    <script>
+      document.getElementById("salesForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+
+        fetch("https://script.google.com/macros/s/AKfycbwON5_F_Mt4HkvW8oBy-lZd9TbKA_SOe5Le6gx404sQ7BQUem7VIDi70jEaWQTWMRZg/exec", {
+          method: "POST",
+          body: formData
+        })
+        .then(res => res.text())
+        .then(data => {
+          alert("✅ Sales submitted successfully!");
+          form.reset();
+          location.reload();
+        })
+        .catch(err => {
+          console.error(err);
+          alert("❌ Failed to submit sales. Please try again.");
+        });
+      });
+    </script>
   </body>
 </html>
