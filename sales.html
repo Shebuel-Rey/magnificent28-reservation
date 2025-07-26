@@ -8,6 +8,7 @@
         padding: 30px;
         background: #f8f8f8;
       }
+
       input, textarea, button {
         display: block;
         width: 300px;
@@ -15,44 +16,34 @@
         padding: 8px;
         font-size: 16px;
       }
+
       button {
         background-color: #4CAF50;
         color: white;
         border: none;
         cursor: pointer;
       }
+
+      .nav-button {
+        background-color: #2196F3;
+        margin-bottom: 20px;
+      }
     </style>
   </head>
   <body>
     <h2>Sales Entry</h2>
-<button type="button" onclick="window.location.href='https://shebuel-rey.github.io/magnificent28-reservation/index.html'">
-  OPEN RESERVATION
-</button>
-<form action="https://script.google.com/macros/s/AKfycbwON5_F_Mt4HkvW8oBy-lZd9TbKA_SOe5Le6gx404sQ7BQUem7VIDi70jEaWQTWMRZg/exec" method="POST" target="_blank">
-  <input type="text" name="Name" placeholder="Customer Name" required>
-  <input type="number" name="Payment" placeholder="Amount Paid" required>
-  <textarea name="Note" placeholder="Optional note..."></textarea>
-  <button type="submit">Submit Sale</button>
-</form>
 
-    <script>
-console.log("Hello world!");
-      document.getElementById("salesForm").addEventListener("submit", function(e) {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const params = new URLSearchParams();
-        for (const pair of formData.entries()) {
-          params.append(pair[0], pair[1]);
-        }
+    <!-- Navigation Button to Reservation Page -->
+    <button class="nav-button" type="button" onclick="window.location.href='https://shebuel-rey.github.io/magnificent28-reservation/index.html'">
+      OPEN RESERVATION
+    </button>
 
-        fetch("https://script.google.com/macros/s/AKfycbwON5_F_Mt4HkvW8oBy-lZd9TbKA_SOe5Le6gx404sQ7BQUem7VIDi70jEaWQTWMRZg/exec", {
-          method: "POST",
-          body: params
-        })
-        .then(res => res.text())
-        .then(data => alert("Success: " + data))
-        .catch(err => alert("Error: " + err));
-      });
-    </script>
+    <!-- Sales Form -->
+    <form action="https://script.google.com/macros/s/AKfycbwON5_F_Mt4HkvW8oBy-lZd9TbKA_SOe5Le6gx404sQ7BQUem7VIDi70jEaWQTWMRZg/exec" method="POST" target="_blank">
+      <input type="text" name="Name" placeholder="Customer Name" required>
+      <input type="number" name="Payment" placeholder="Amount Paid" required>
+      <textarea name="Note" placeholder="Optional note..."></textarea>
+      <button type="submit">Submit Sale</button>
+    </form>
   </body>
 </html>
