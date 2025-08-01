@@ -34,7 +34,8 @@
     <h2>Sales Entry</h2>
 
     <!-- Navigation Button to Reservation Page -->
-    <button class="nav-button" type="button" onclick="window.location.href='https://shebuel-rey.github.io/magnificent28-reservation/index.html'">
+    <button class="nav-button" type="button" 
+      onclick="window.location.href='https://shebuel-rey.github.io/magnificent28-reservation/index.html'">
       OPEN RESERVATION
     </button>
 
@@ -52,12 +53,12 @@
         const form = e.target;
         const formData = new FormData(form);
 
-        fetch("https://script.google.com/macros/s/AKfycbysxOZ_M0wTBI8zzclNErv8J0V8cMjjwSImBxGmpPEX_vJIuX7hwTA8-hK2lndUgHvB/exec", {
+        fetch("https://script.google.com/macros/s/AKfycbwON5_F_Mt4HkvW8oBy-lZd9TbKA_SOe5Le6gx404sQ7BQUem7VIDi70jEaWQTWMRZg/exec", {
           method: "POST",
+          mode: "no-cors", // 👈 bypass CORS restrictions
           body: formData
         })
-        .then(res => res.text())
-        .then(data => {
+        .then(() => {
           alert("✅ Sales submitted successfully!");
           form.reset();
           location.reload();
